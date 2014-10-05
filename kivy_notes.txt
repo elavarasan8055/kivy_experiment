@@ -1,0 +1,15 @@
+There are my rough notes which i noted when reading Kivy source code. 
+
+app.py is the entry point and App class should be inherited in your code to run your kivy app.
+
+App class methods:
+	run:
+          this method is will call build() method in order to get the root if you have not overrided the build () method 
+          in your code then it will take Widget object as root. It will call method load_kv() which will automaticall find
+          your .kv file by using the class name in our source code. load_kv will then call load_file() in Builder class which is 		  in lang.py then it will handover the data to parser which will parse the data and return root widget will will have 
+ 	 all the widgets in it and in lang.py there is a check which will allow only one root. 
+		Build method / load_kv method will return/ set root element. Builder will do if dont inherit this method or dont have 
+         root widget in .kv file
+         we can even directly load the .kv file by calling load_file from Builder
+	Cool we can even add our class to root and we can define rule for that class by <>: 
+	
